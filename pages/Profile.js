@@ -7,11 +7,9 @@ import {
 } from "react-native";
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function Profile({ navigation }) {
-  navigation.setOptions({ headerShown: false });
-
   const handleLogout = async () => {
     await signOut(auth)
       .then(() => {
